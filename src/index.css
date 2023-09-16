@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  scrollbar-gutter: stable both-edges;
+  font-family: 'Inter', sans-serif, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+}
+body:before {
+  content: "small";
+  display: none; /* Prevent from displaying. */
+}
+@media (min-width: 330px) {
+  body:before {
+    content: "xs";
+  }
+}
+
+@media (min-width: 640px) {
+  body:before {
+    content: "sm";
+  }
+}
+
+@media (min-width: 768px) {
+  body:before {
+    content: "md";
+  }
+}
+@media (min-width: 1024px) {
+  body:before {
+    content: "lg";
+  }
+}
+
+.scrollablebox {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-padding-left: 10px;
+  scroll-padding-right: 10px;
+}
+.scrollablebox::-webkit-scrollbar {
+  display: none;
+}
+
+
+.mymodal-enter {
+  opacity: 0.2;
+  transform: translateY(100%);
+}
+.mymodal-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.mymodal-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mymodal-exit-active {
+  opacity: 0.2;
+  transform: translateY(100%);
+  transition: opacity 300ms, transform 300ms;
+}
