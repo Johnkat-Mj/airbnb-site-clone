@@ -22,7 +22,7 @@ export function CategoriesBlock() {
     if (window !== undefined) {
       let windowHeight = window.scrollY;
       // window height changed for the demo
-      windowHeight > 40 ? setCanApplyShadow(true) : setStickyClass(false);
+      windowHeight > 40 ? setCanApplyShadow(true) : setCanApplyShadow(false);
     }
   };
   return (
