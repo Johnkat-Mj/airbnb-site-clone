@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { LucideChevronLeft, LucideChevronRight } from "lucide-react";
 
 
@@ -9,11 +9,11 @@ export function ScrollableBox({ children }) {
 
     const boxScrollable = useRef(null)
 
-    const scrollEvent = () => {
+    const scrollEvent = useCallback(() => {
         setscrollLeft(() => boxScrollable.current.scrollLeft)
         setscrollWidth(() => boxScrollable.current.scrollWidth)
         setoffsetWidth(() => boxScrollable.current.offsetWidth)
-    };
+    },[]);
 
     const handleScrollLeft = () => {
         boxScrollable.current.scrollLeft -= boxScrollable.current.clientWidth;
